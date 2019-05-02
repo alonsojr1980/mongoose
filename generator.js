@@ -8,8 +8,8 @@
 /*
 var Generator = require('../models/generator.js');
 
-Generator.gen_id("quotation_" + quotation.sp_id, 1, function (err3, seq) {
-    if (!err3) {
+Generator.gen_id("quotation_" + quotation.sp_id, 1, function (err, seq) {
+    if (!err) {
         quote.sp_sequence = seq;                  
         quote.save(function(error){
             if (!error) {
@@ -18,6 +18,8 @@ Generator.gen_id("quotation_" + quotation.sp_id, 1, function (err3, seq) {
                 callback(error, null);
             }
         });
+    } else {
+        callback(err, null);
     }
 });
 
