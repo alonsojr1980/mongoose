@@ -48,7 +48,7 @@ GeneratorSchema.methods = {
 };
 
 GeneratorSchema.statics = {
-
+    //sequence name, quantity to increment, callback function
     gen_id: function (name, increment, callback) {
         var gen = this.findOne({name: name}, function(err, generator){
             if (!err) {
